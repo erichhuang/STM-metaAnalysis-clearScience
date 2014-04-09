@@ -16,17 +16,19 @@ figureFiveBCDE <- function(... = NULL){
   
   ## LOAD DATA OBJECTS
   cat('Loading the necessary data objects from Synapse\n')
-  clinEnt <- loadEntity('syn1710251')
+#   clinEnt <- loadEntity('syn1710251')
+  load('~/Documents/R/Data//oslovalClinicalTable.rbin')
   osloVecEnt <- loadEntity('syn1725898')
-  survEnt <- loadEntity('syn1710257')
+#   survEnt <- loadEntity('syn1710257')
+  load('~/Documents/R/Data//oslovalSurvData.rbin')
   
-  xIntClinDat <- clinEnt$objects$oslovalClinicalTable
-  survObj <- survEnt$objects$oslovalSurvData
+  xIntClinDat <- oslovalClinicalTable
+  survObj <- oslovalSurvData
   rownames(survObj) <- rownames(xIntClinDat)
   
   cat('Breaking out the clinical subcategories\n')
   ## CATEGORIZE SURVIVAL DATA
-  yTime <- survEnt$objects$oslovalSurvData[ , 1]/356
+  yTime <- oslovalSurvData[ , 1]/356
   timeCat <- rep(NA, length(yTime))
   timeCat[which(yTime <= 5)] <- 1
   timeCat[which(yTime > 5 & yTime <= 10)] <- 2
