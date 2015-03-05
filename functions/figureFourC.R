@@ -17,9 +17,9 @@ figureFourC <- function(... = NULL){
   require(survcomp)
   
   ## LOAD NECESSARY OBJECTS
-  metbLbEnt <- loadEntity('syn1744693') # 15 October leaderboard
-  metbEnt <- loadEntity('syn1738796') # matrix of predictions
-  metbSurvEnt <- loadEntity('syn1125632') # survival object 
+  metbLbEnt <- synGet('syn1744693') # 15 October leaderboard
+  metbEnt <- synGet('syn1738796') # matrix of predictions
+  metbSurvEnt <- synGet('syn1125632') # survival object 
   
   metbLeaderboard <- metbLbEnt$objects$object
   metbScores <- metbEnt$objects$object

@@ -14,7 +14,7 @@ figureFiveA <- function(... = NULL){
   
   ## LOAD NECESSARY DATA OBJECTS
   cat('Loading necessary data objects from Synapse\n')
-  clinGroupCciEnt <- loadEntity('syn1738278')
+  clinGroupCciEnt <- synGet('syn1738278')
   clinGroupCciList <- clinGroupCciEnt$objects$object
   
   cat('Performing one way ANOVA on clinical variables -> model performance\n')

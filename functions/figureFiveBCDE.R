@@ -16,9 +16,9 @@ figureFiveBCDE <- function(... = NULL){
   
   ## LOAD DATA OBJECTS
   cat('Loading the necessary data objects from Synapse\n')
-  clinEnt <- loadEntity('syn1710251')
-  osloVecEnt <- loadEntity('syn1725898')
-  survEnt <- loadEntity('syn1710257')
+  clinEnt <- synGet('syn1710251')
+  osloVecEnt <- synGet('syn1725898')
+  survEnt <- synGet('syn1710257')
   
   xIntClinDat <- clinEnt$objects$oslovalClinicalTable
   survObj <- survEnt$objects$oslovalSurvData

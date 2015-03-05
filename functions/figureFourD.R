@@ -17,9 +17,9 @@ figureFourD <- function(... = NULL){
   require(survcomp)
   
   ## LOAD NECESSARY OBJECTS
-  osloEnt <- loadEntity('syn1725898') # matrix of predictions 
-  osloSurvEnt <- loadEntity('syn1710257') # survival object
-  osloLbEnt <- loadEntity('syn1739275') # Final osloval leadeboard
+  osloEnt <- synGet('syn1725898') # matrix of predictions 
+  osloSurvEnt <- synGet('syn1710257') # survival object
+  osloLbEnt <- synGet('syn1739275') # Final osloval leadeboard
   
   osloScores <- osloEnt$objects$osloPredictions
   osloScores <- data.frame('patientID' = 1:184, osloScores)

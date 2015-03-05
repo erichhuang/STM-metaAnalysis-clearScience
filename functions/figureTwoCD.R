@@ -13,9 +13,9 @@ figureTwoCD <- function(... = NULL){
   
   ## READ IN THE LEADERBOARD DATA
   cat('Loading the necessary objects from Synapse\n')
-  fifteenOctLBEnt <- loadEntity('syn1744693')
-  pre15OctLBEnt <- loadEntity('syn1745570')
-  finalLBEnt <- loadEntity('syn1739275')
+  fifteenOctLBEnt <- synGet('syn1744693')
+  pre15OctLBEnt <- synGet('syn1745570')
+  finalLBEnt <- synGet('syn1739275')
   
   oct15LB <- fifteenOctLBEnt$objects$object
   preOct15LB <- pre15OctLBEnt$objects$object
